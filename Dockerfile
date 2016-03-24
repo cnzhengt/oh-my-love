@@ -21,7 +21,10 @@ WORKDIR /usr/src/app
 # will be cached unless changes to one of those two files
 # are made.
 COPY Gemfile Gemfile.lock ./
-RUN gem install bundler && bundle install --jobs 20 --retry 5
+RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+RUN gem install bundler
+RUN bundle config mirror.https://rubygems.org https://ruby.taobao.org
+RUN bundle install --jobs 20 --retry 5
 
 # Copy the main application.
 COPY . ./
