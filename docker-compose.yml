@@ -1,0 +1,4 @@
+oh-my-love:
+  image: xiao/oh-my-love
+  environment:
+    - VIRTUAL_HOST=oh-my-love.xiaohanyu.me

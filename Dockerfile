@@ -36,4 +36,3 @@ EXPOSE 3000
 # tell the Rails dev server to bind to all interfaces by
 # default.
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
-
